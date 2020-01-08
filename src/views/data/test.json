@@ -1,0 +1,32 @@
+[
+  [
+    {
+      "id": 1,
+      "text": "wc"
+    },
+    {
+      "id": 2,
+      "text": "cincai debit"
+    }
+  ],
+  [
+    {
+      "id": 2,
+      "text": "cincai credit"
+    },
+    {
+      "id": 1,
+      "text": "yj"
+    }
+  ],
+  [
+    {
+      "text": "wc der bb",
+      "id": 1
+    },
+    {
+      "text": "cincai question",
+      "id": 2
+    }
+  ]
+]

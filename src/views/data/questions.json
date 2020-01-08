@@ -1,0 +1,554 @@
+[
+  { 
+    "text": "Which of the below is external user of accounting information?",
+    "ans": 2,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Management"
+      },
+      {
+        "id": 2,
+        "text": "Suppliers"
+      },
+      {
+        "id": 3,
+        "text": "Internal auditors"
+      },
+      {
+        "id": 4,
+        "text": "Workers"
+      }
+    ]
+  },
+  { 
+    "text": "Which of the below is not branches of accounting?",
+    "ans": 3,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Taxation"
+      },
+      {
+        "id": 2,
+        "text": "Auditing"
+      },
+      {
+        "id": 3,
+        "text": "Partnership"
+      },
+      {
+        "id": 4,
+        "text": "Cost Accounting"
+      }
+    ]
+  },
+  { 
+    "text": "Which of the following is not a type of business activity?",
+    "ans": 1,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Purchasing"
+      },
+      {
+        "id": 2,
+        "text": "Servicing"
+      },
+      {
+        "id": 3,
+        "text": "Manufacturing"
+      },
+      {
+        "id": 4,
+        "text": "Merchandising"
+      }
+    ]
+  },
+  { 
+    "text": "What are the components of Statement of Financial Position",
+    "ans": 4,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Assets and Liabilities"
+      },
+      {
+        "id": 2,
+        "text": "Liabilities and Owner's Equity"
+      },
+      {
+        "id": 3,
+        "text": "Accounts Payable and Accounts Receivable"
+      },
+      {
+        "id": 4,
+        "text": "Assets, Liabilities and Owner's Equity"
+      }
+    ]
+  },
+  { 
+    "text": "Choose the relevant accounting concept for the following decision.Information recorded is based on the actual cost incurred in transactions",
+    "ans": 1,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Historical cost principle"
+      },
+      {
+        "id": 2,
+        "text": "Revenue Recognition"
+      },
+      {
+        "id": 3,
+        "text": "Expense Recognition"
+      },
+      {
+        "id": 4,
+        "text": "Consistency"
+      }
+    ]
+  },
+  { 
+    "text": "Choose the relevant accounting concept for the following decision.A company reports the details of Financial Statement that would impact the user's decision. ",
+    "ans": 3,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Historical cost principle"
+      },
+      {
+        "id": 2,
+        "text": "Objectivity"
+      },
+      {
+        "id": 3,
+        "text": "Full disclosure"
+      },
+      {
+        "id": 4,
+        "text": "Consistency"
+      }
+    ]
+  },
+  { 
+    "text": "Choose the relevant accounting concept for the following decision.The business will continue in operation long enough to carry out the existing objectives instead of being closed or sold",
+    "ans": 2,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Accounting-period"
+      },
+      {
+        "id": 2,
+        "text": "Going Concern"
+      },
+      {
+        "id": 3,
+        "text": "Materiality"
+      },
+      {
+        "id": 4,
+        "text": "Fair value measurement"
+      }
+    ]
+  },
+  { 
+    "text": "Choose the relevant accounting concept for the following decision.All accounting data must have evidence that is valid and reliable to support transactions",
+    "ans": 4,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Historical cost principle"
+      },
+      {
+        "id": 2,
+        "text": "Materiality"
+      },
+      {
+        "id": 3,
+        "text": "Full disclosure"
+      },
+      {
+        "id": 4,
+        "text": "Objectivity"
+      }
+    ]
+  },
+  { 
+    "text": "Choose the relevant accounting concept for the following decision.Ms Mana has given a consultation to one of her customers in May.Her customer promised to pay the cost in June.Ms Mana recoreded the service revenue in her business book in May.",
+    "ans": 4,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Historical cost principle"
+      },
+      {
+        "id": 2,
+        "text": "Monetary measurement"
+      },
+      {
+        "id": 3,
+        "text": "Expense Recognition"
+      },
+      {
+        "id": 4,
+        "text": "Revenue Recognition"
+      }
+    ]
+  },
+  { 
+    "text": "Choose the relevant accounting concept for the following decision.Owner records cash withdrawal from the business for his own use",
+    "ans": 3,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Fair value Measurement"
+      },
+      {
+        "id": 2,
+        "text": "Expense Recognition"
+      },
+      {
+        "id": 3,
+        "text": "Economic Entity"
+      },
+      {
+        "id": 4,
+        "text": "Going Concern"
+      }
+    ]
+  },
+  { 
+    "text": "Which accounting concept does the following statement refer to?A company uses straight line method in depreeciating its fixed assets. It decides to change to declining balance method.",
+    "ans": 2,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Monetary Measurement"
+      },
+      {
+        "id": 2,
+        "text": "Consistency"
+      },
+      {
+        "id": 3,
+        "text": "Expense Recognition"
+      },
+      {
+        "id": 4,
+        "text": "Full disclosure"
+      }
+    ]
+  },
+  { 
+    "text": "Which of the following is not Special Journal",
+    "ans": 4,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Cash Receipts Journal"
+      },
+      {
+        "id": 2,
+        "text": "Purchase Journal"
+      },
+      {
+        "id": 3,
+        "text": "Sales Journal"
+      },
+      {
+        "id": 4,
+        "text": "General Journal"
+      }
+    ]
+  },
+  { 
+    "text": "Identify which journal should the following transaction be recorded. Owner purchased RM5000 of office equipment on account from Furniture Sdn Bhd",
+    "ans": 1,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "General Journal"
+      },
+      {
+        "id": 2,
+        "text": "Purchase Journal"
+      },
+      {
+        "id": 3,
+        "text": "Sales Journal"
+      },
+      {
+        "id": 4,
+        "text": "Cash Payment Journal"
+      }
+    ]
+  },
+  { 
+    "text": "Identify which journal should the following transaction be recorded.Owner invested RM10000 cash in business as opening capital",
+    "ans": 3,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "General Journal"
+      },
+      {
+        "id": 2,
+        "text": "Purchase Journal"
+      },
+      {
+        "id": 3,
+        "text": "Cash Receipts Journal"
+      },
+      {
+        "id": 4,
+        "text": "Cash Payment Journal"
+      }
+    ]
+  },
+  { 
+    "text": "Identify which journal should the following transaction be recorded.Star Enterprise returns damaged merchandise worth RM600",
+    "ans": 4,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Sales Journal"
+      },
+      {
+        "id": 2,
+        "text": "Purchase Journal"
+      },
+      {
+        "id": 3,
+        "text": "Cash Receipts Journal"
+      },
+      {
+        "id": 4,
+        "text": "General Journal"
+      }
+    ]
+  },
+  { 
+    "text": "Identify which journal should the following transaction be recorded.Paid workers salaries RM4500",
+    "ans": 3,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "General Journal"
+      },
+      {
+        "id": 2,
+        "text": "Purchase Journal"
+      },
+      {
+        "id": 3,
+        "text": "Cash Payment Journal"
+      },
+      {
+        "id": 4,
+        "text": "Sales Journal"
+      }
+    ]
+  },
+  { 
+    "text": "Identify which journal should the following transaction be recorded. Received full payment from Star Enterprise for merchandise sold , RM6000",
+    "ans": 3,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "General Journal"
+      },
+      {
+        "id": 2,
+        "text": "Purchase Journal"
+      },
+      {
+        "id": 3,
+        "text": "Cash Receipts Journal"
+      },
+      {
+        "id": 4,
+        "text": "Cash Payment Journal"
+      }
+    ]
+  },
+  { 
+    "text": "Which of the following is non-current liability?",
+    "ans": 4,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Accounts payable"
+      },
+      {
+        "id": 2,
+        "text": "Unearned revenue"
+      },
+      {
+        "id": 3,
+        "text": "Accrued expense"
+      },
+      {
+        "id": 4,
+        "text": "Mortgage"
+      }
+    ]
+  },
+  { 
+    "text": "Which of the following is not an element involved in Owner's Equity?",
+    "ans": 4,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Capital"
+      },
+      {
+        "id": 2,
+        "text": "Drawings"
+      },
+      {
+        "id": 3,
+        "text": "Profit"
+      },
+      {
+        "id": 4,
+        "text": "Loan"
+      }
+    ]
+  },
+  { 
+    "text": "Identify Tangible Assets",
+    "ans": 1,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Vehicles,Bulidings"
+      },
+      {
+        "id": 2,
+        "text": "Equipment,Copyright"
+      },
+      {
+        "id": 3,
+        "text": "Patent,Trademark"
+      },
+      {
+        "id": 4,
+        "text": "Building, Trademark"
+      }
+    ]
+  },
+  { 
+    "text": "Which of the following is not a current asset?",
+    "ans": 3,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Bank"
+      },
+      {
+        "id": 2,
+        "text": "Cash"
+      },
+      {
+        "id": 3,
+        "text": "Office equipment"
+      },
+      {
+        "id": 4,
+        "text": "Office supply"
+      }
+    ]
+  },
+  { 
+    "text": "Identify the suitable journal to record the following transaction. Gamer Sdn Bhd paid Minka Enterprise with cheque to settle all its debts.",
+    "ans": 1,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Cash Payment Journal"
+      },
+      {
+        "id": 2,
+        "text": "Cash Reciepts Journal"
+      },
+      {
+        "id": 3,
+        "text": "Sales Journal"
+      },
+      {
+        "id": 4,
+        "text": "Purchase Journal"
+      }
+    ]
+  },
+  { 
+    "text": "Identify the relevant accounting concept for the following statement. To ensure that user get more relevant information, KSB reported his building at market valuee in the financial statements.",
+    "ans": 3,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Historical cost principle"
+      },
+      {
+        "id": 2,
+        "text": "Full disclosure"
+      },
+      {
+        "id": 3,
+        "text": "Fair value measurement"
+      },
+      {
+        "id": 4,
+        "text": "Economic entity"
+      }
+    ]
+  },
+  { 
+    "text": "Identify the relevant accounting concept for the following statement.KSB Enterprise accounting records transactions only takes into account data that can be expressed in monetary values.",
+    "ans": 4,
+    "score": 1,
+    "answers": [
+      {
+        "id": 1,
+        "text": "Objectivity"
+      },
+      {
+        "id": 2,
+        "text": "Materiality"
+      },
+      {
+        "id": 3,
+        "text": "Full disclosure"
+      },
+      {
+        "id": 4,
+        "text": "Monetary measurement"
+      }
+    ]
+  }
+]
