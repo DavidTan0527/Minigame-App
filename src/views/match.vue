@@ -1,6 +1,9 @@
 <template>
   <div id="_match">
-    <div class="timer" :class="{danger}">{{ time }}</div>
+    <div class="header">
+      <div class="score">Score: {{ correct }}</div>
+      <div class="timer" :class="{danger}">{{ time }}</div>
+    </div>
     <div class="question">
       {{ QArr.length ? QArr[qId].text : '' }}
     </div>
@@ -202,12 +205,21 @@ export default {
 
 <style lang="scss">
 #_match {
-  .timer {
+  .header {
     display: flex;
-    justify-content: flex-end;
-    font-size: 3rem;
-    &.danger {
-      color: red;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    .score {
+      font-size: 1.5rem;
+    }
+    .timer {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 3rem;
+      &.danger {
+        color: red;
+      }
     }
   }
   .question {
