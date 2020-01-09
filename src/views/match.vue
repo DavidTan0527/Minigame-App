@@ -1,7 +1,8 @@
 <template>
   <div id="_match">
+    <div class="timer" :class="{danger}">{{ time }}</div>
     <div class="question">
-      {{ matches[2][qId].text }}
+      {{ QArr.length ? QArr[qId].text : '' }}
     </div>
     <div class="answer">
       <div class="debit">
@@ -12,7 +13,7 @@
           'selected': selectedD ? d.id == selectedD.id : '',
           'is-wrong': wrong
         }"
-        v-for="d in matches[0]" :key="d.id" @click="() => {if(!freeze) selectedD = d}">
+        v-for="d in DArr" :key="d.id" @click="() => {if(!freeze && !clickedD.includes(d.id)) selectedD = d}">
           {{ d.text }}
         </div>
       </div>
@@ -24,7 +25,7 @@
           'selected': selectedC ? c.id == selectedC.id : '',
           'is-wrong': wrong
         }"
-        v-for="c in matches[1]" :key="c.id" @click="() => {if(!freeze) selectedC = c}">
+        v-for="c in CArr" :key="c.id" @click="() => {if(!freeze && !clickedC.includes(c.id)) selectedC = c}">
           {{ c.text }}
         </div>
       </div>
@@ -33,25 +34,56 @@
 </template>
 
 <script>
-import matches from './data/test.json';
+import matches from './data/match.json';
+import { mapMutations } from 'vuex';
 
 export default {
   mounted() {
-    this.matches[0] = this.shuffle(this.matches[0]);
-    this.matches[1] = this.shuffle(this.matches[1]);
+    this.prog = setInterval(() => {
+      this.time--;
+      if (this.time <= 10) this.danger = true;
+    }, 1000);
+    this.randomize(7);
   },
   data: () => ({
     matches,
-    match_num: matches[0].length,
+    match_num: 0,
     qId: 0,
+    prog: null,
     wrong: false,
     freeze: false,
     selectedD: null,
     selectedC: null,
     clickedD: [],
-    clickedC: []
+    clickedC: [],
+    time: 45,
+    CArr: [],
+    DArr: [],
+    QArr: [],
+    danger: false,
+    endgame: false,
+    correct: 0,
   }),
   methods: {
+    ...mapMutations({
+      score: 'ADD_SCORE'
+    }),
+    hard_reset() {
+      this.match_num = 0
+      this.qId = 0
+      this.prog = null
+      this.wrong = false
+      this.freeze = false
+      this.selectedD = null
+      this.selectedC = null
+      this.clickedD = []
+      this.clickedC = []
+      this.CArr = []
+      this.DArr = []
+      this.QArr = []
+      this.danger = false
+      clearInterval(this.prog);
+    },
     reset() {
       this.selectedD = null;
       this.selectedC = null;
@@ -68,16 +100,50 @@ export default {
         array[randomIndex] = temporaryValue;
       }
       return array;
+    },
+    searchById(id, key) {
+      let targetArr = key == "C" ? this.matches[1] : this.matches[0];
+      return targetArr.filter(el => el.id == id)[0];
+    },
+    randomize(count) {
+      this.DArr = []; this.CArr = []; this.QArr = [];
+      this.match_num = count;
+      this.matches[2] = this.shuffle(this.matches[2]);
+      let DSet = new Set(), CSet = new Set();
+      for (let i = 0; i < this.matches[2].length; i++) {
+        let obj = this.matches[2][i];
+        let C = this.searchById(obj.id, "C"), D = this.searchById(obj.id, "D");
+        if (DSet.has(D.text) || CSet.has(C.text)) continue;
+        this.QArr.push(obj);
+        DSet.add(D.text); CSet.add(C.text);
+        this.DArr.push(D); this.CArr.push(C);
+        this.matches[2].splice(i, 1);
+        if (this.QArr.length == count) break;
+      }
+      this.DArr = this.shuffle(this.DArr);
+      this.CArr = this.shuffle(this.CArr);
+    },
+    inc() {
+      this.correct++;
+      this.match_num--; this.qId += this.qId == this.QArr.length - 1 ? 0 : 1;
+    },
+    finish_game() {
+      alert(`You have scored ${this.correct}.`);
+      clearInterval(this.prog);
+      this.score(this.correct);
+      setTimeout(() => {
+        this.$router.push('/');
+      }, 3000);
     }
   },
   watch: {
     selectedC(self) {
       if (self && this.selectedD) {
-        if (self.id == matches[2][this.qId].id
+        if (self.id == this.QArr[this.qId].id
           && this.selectedD.id == self.id) {
             this.clickedD.push(this.selectedD.id);
             this.clickedC.push(self.id);
-            this.match_num--; this.qId += this.qId == this.matches[2].length - 1 ? 0 : 1;
+            this.inc();
             this.reset();
           } else { 
             this.wrong = true; this.freeze = true; 
@@ -87,11 +153,11 @@ export default {
     },
     selectedD(self) {
       if (self && this.selectedC) {
-        if (self.id == matches[2][this.qId].id
+        if (self.id == this.QArr[this.qId].id
           && this.selectedC.id == self.id) {
             this.clickedD.push(self.id);
             this.clickedC.push(this.selectedC.id);
-            this.match_num--; this.qId += this.qId == this.matches[2].length - 1 ? 0 : 1;
+            this.inc();
             this.reset();
           } else { 
             this.wrong = true; this.freeze = true; 
@@ -100,8 +166,24 @@ export default {
       }
     },
     match_num(x) {
-      // next ques
-      if (x == 0) console.log("won")
+      if (x == 0) {
+        if (this.endgame) setTimeout(this.finish_game, 500);
+        else {
+          setTimeout(() => {
+            this.time = 30;
+            this.endgame = true;
+            this.hard_reset();
+            this.prog = setInterval(() => {
+              this.time--;
+              if (this.time <= 10) this.danger = true;
+            }, 1000);
+            this.randomize(5);
+          }, 1000);
+        }
+      }
+    },
+    time(self) {
+      if (self <= 0) setTimeout(this.finish_game, 500);
     }
   }
 }
@@ -109,17 +191,36 @@ export default {
 
 <style lang="scss">
 #_match {
+  .timer {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 3rem;
+    &.danger {
+      color: red;
+    }
+  }
   .question {
     margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
   }
   .answer {
     display: flex;
     justify-content: space-around;
+    font-size: 1.3rem;
+    .debit {
+      margin-right: .2rem;
+    }
+    .credit {
+      margin-left: .2rem;
+    }
     .selects {
       border: 1px solid;
       padding: .15rem .25rem;
       border-radius: .25rem;
+      margin-top: .2rem;
       margin-bottom: .5rem;
+      font-size: 1rem;
       &.transparent {
         opacity: 0;
       }

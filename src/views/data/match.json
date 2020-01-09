@@ -2,43 +2,307 @@
   [
     {
       "id": 1,
-      "text": "debit 1"
+      "text": "Vehicle"
     },
     {
       "id": 2,
-      "text": "debit 2"
+      "text": "Accounts receivable"
     },
     {
       "id": 3,
-      "text": "debit 3"
+      "text": "Depreciation expense"
+    },
+    {
+      "id": 4,
+      "text": "Bad debts expense"
+    },
+    {
+      "id": 5,
+      "text": "Allowance for doubtful debts"
+    },
+    {
+      "id": 6,
+      "text": "Unearned revenue"
+    },
+    {
+      "id": 7,
+      "text": "Cash"
+    },
+    {
+      "id": 8,
+      "text": "Inventory"
+    },
+    {
+      "id": 9,
+      "text": "Sales return and Allowance"
+    },
+    {
+      "id": 10,
+      "text": "Depreciation expense"
+    },
+    {
+      "id": 11,
+      "text": "Notes payable & interest expense"
+    },
+    {
+      "id": 12,
+      "text": "Expense"
+    },
+    {
+      "id": 13,
+      "text": "Accrued expense"
+    },
+    {
+      "id": 14,
+      "text": "Warranty expenset"
+    },
+    {
+      "id": 15,
+      "text": "Warranty expense"
+    },
+    {
+      "id": 16,
+      "text": "Warranty payable"
+    },
+    {
+      "id": 17,
+      "text": "Fixed assets"
+    },
+    {
+      "id": 18,
+      "text": "Bond payable"
+    },
+    {
+      "id": 19,
+      "text": "Bad debts expense"
+    },
+    {
+      "id": 20,
+      "text": "Allowance for doubtful debts"
+    },
+    {
+      "id": 21,
+      "text": "Accounts receivable"
+    },
+    {
+      "id": 22,
+      "text": "Cash"
+    },
+    {
+      "id": 23,
+      "text": "Allowance for doubtful debts"
+    },
+    {
+      "id": 24,
+      "text": "Bad debts expense"
+    },
+    {
+      "id": 25,
+      "text": "Purchase"
     }
   ],
   [
-    {
-      "id": 2,
-      "text": "credit 1"
-    },
-    {
-      "id": 3,
-      "text": "credit 2"
-    },
     {
       "id": 1,
-      "text": "credit 3"
+      "text": "Cash"
+    },
+    {
+      "id": 2,
+      "text": "Sales revenue"
+    },
+    {
+      "id": 3,
+      "text": "Accumulated depreciation"
+    },
+    {
+      "id": 4,
+      "text": "Accounts receivable"
+    },
+    {
+      "id": 5,
+      "text": "Accounts receivables"
+    },
+    {
+      "id": 6,
+      "text": "Service revenue"
+    },
+    {
+      "id": 7,
+      "text": "Unearned revenue"
+    },
+    {
+      "id": 8,
+      "text": "Account Payable"
+    },
+    {
+      "id": 9,
+      "text": "Account receivable"
+    },
+    {
+      "id": 10,
+      "text": "Accumulated depreciation"
+    },
+    {
+      "id": 11,
+      "text": "Bank"
+    },
+    {
+      "id": 12,
+      "text": "Accrued expense"
+    },
+    {
+      "id": 13,
+      "text": "Bank/Cash"
+    },
+    {
+      "id": 14,
+      "text": "Warranty payable"
+    },
+    {
+      "id": 15,
+      "text": "Warranty payable"
+    },
+    {
+      "id": 16,
+      "text": "Inventory"
+    },
+    {
+      "id": 17,
+      "text": "Notes payable"
+    },
+    {
+      "id": 18,
+      "text": "Bank"
+    },
+    {
+      "id": 19,
+      "text": "Accounts receivable"
+    },
+    {
+      "id": 20,
+      "text": "Accounts receivable"
+    },
+    {
+      "id": 21,
+      "text": "Bad debts recovered"
+    },
+    {
+      "id": 22,
+      "text": "Accounts receivable"
+    },
+    {
+      "id": 23,
+      "text": "Account receivable"
+    },
+    {
+      "id": 24,
+      "text": "Allowance for doubtful debts"
+    },
+    {
+      "id": 25,
+      "text": "Accounts payable"
     }
   ],
   [
     {
-      "text": "This is question 1??",
+      "text": "Matahari Enterprise purchased a vehilce worth RM30000 by cash.",
       "id": 1
     },
     {
-      "text": "This is question 2????",
+      "text": "Credit sales of RM5000 has not yet been recorded.",
       "id": 2
     },
     {
-      "text": "This is question 3??!?!?!",
+      "text": "Depreciation of office euipment is RM350 every year.",
       "id": 3
+    },
+    {
+      "text": "During January 2020, a total of RM9000 from account receivable was written off by using direct write-off method.",
+      "id": 4
+    },
+    {
+      "text": "During January 2020, a total of RM9000 from account receivable was written off by using allowance method.",
+      "id": 5
+    },
+    {
+      "text": "Company ABC received payment, RM1050 from customer for service that has not yet been performed.",
+      "id": 6
+    },
+    {
+      "text": "Company ABC has performed service related to unearned revenue, RM1050",
+      "id": 7
+    },
+    {
+      "text": "Purchase merchandise on account by using perpetual system",
+      "id": 8
+    },
+    {
+      "text": "Record sales return for periodic system",
+      "id": 9
+    },
+    {
+      "text": "Record depreciation in journal entry",
+      "id": 10
+    },
+    {
+      "text": "Record payment of notes payable and interest on the maturity date",
+      "id": 11
+    },
+    {
+      "text": "Record acrued expenses at the end of accounting period",
+      "id": 12
+    },
+    {
+      "text": "Record the payment of accrued expenses",
+      "id": 13
+    },
+    {
+      "text": "Repair defective products sold under warranty",
+      "id": 14
+    },
+    {
+      "text": "To accrue waranty expense",
+      "id": 15
+    },
+    {
+      "text": "Replace defective products sold under waranty",
+      "id": 16
+    },
+    {
+      "text": "Purchase assets with notes payable",
+      "id": 17
+    },
+    {
+      "text": "Bond Redemption on maturity date",
+      "id": 18
+    },
+    {
+      "text": "During January 2019, a total of RM9000 from the account receivable written off by using direct write-off method used.",
+      "id": 19
+    },
+    {
+      "text": "Record write off for bad debts by allowance method",
+      "id": 20
+    },
+    {
+      "text": "Record of bad debt recovery by reopening accounts receivable",
+      "id": 21
+    },
+    {
+      "text": "Record of bad debt recovery by recording cash receipts",
+      "id": 22
+    },
+    {
+      "text": "On 1 January 2019, accounts receivables balance for Perniagaan ACT is RM148,000 and the balance of the allowance for doubtful debts is RM4,800. During the month, Mr. Khairi a debtor was declared bankrupt and could not pay his debts amounting to RM6,000. Show a journal entry to record a write-off.",
+      "id": 23
+    },
+    {
+      "text": "Record the adjustment for bad debts",
+      "id": 24
+    },
+    {
+      "text": "Purchase merchandise on credit by periodic system",
+      "id": 25
     }
   ]
 ]

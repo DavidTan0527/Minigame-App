@@ -36,7 +36,7 @@ export default {
   data: () => ({
     selected_id: 0,
     chosen: false,
-    time: 30,
+    time: 180,
     danger: false,
     prog: null,
     score: 0,
@@ -60,7 +60,6 @@ export default {
       }, inter);
     },
     finishGame() {
-      console.log("finish", this.score);
       this.add(this.score);
       // display score popup
       alert(`You have scored ${this.score}.`);
