@@ -75,6 +75,7 @@ export default {
       score: 'ADD_SCORE'
     }),
     hard_reset() {
+      clearInterval(this.prog);
       this.match_num = 0
       this.qId = 0
       this.prog = null
@@ -88,7 +89,6 @@ export default {
       this.DArr = []
       this.QArr = []
       this.danger = false
-      clearInterval(this.prog);
     },
     reset() {
       this.selectedD = null;
