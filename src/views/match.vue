@@ -117,6 +117,7 @@ export default {
       this.match_num = count;
       this.matches[2] = this.shuffle(this.matches[2]);
       let DSet = new Set(), CSet = new Set();
+      let pending = [];
       for (let i = 0; i < this.matches[2].length; i++) {
         let obj = this.matches[2][i];
         let C = this.searchById(obj.id, "C"), D = this.searchById(obj.id, "D");
@@ -124,9 +125,10 @@ export default {
         this.QArr.push(obj);
         DSet.add(D.text); CSet.add(C.text);
         this.DArr.push(D); this.CArr.push(C);
-        this.matches[2].splice(i, 1);
+        pending.push(i);
         if (this.QArr.length == count) break;
       }
+      for (let i of pending) this.matches[2].splice(i, 1);
       this.DArr = this.shuffle(this.DArr);
       this.CArr = this.shuffle(this.CArr);
     },
