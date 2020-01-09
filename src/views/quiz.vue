@@ -23,11 +23,11 @@
 </template>
 
 <script>
-import qs from './data/questions.json';
+import { mapMutations } from 'vuex';
 
 export default {
+  props: ['qs'],
   mounted() {
-    this.qs = this.shuffle(this.qs);
     this.prog = setInterval(() => {
       this.time--;
       if (this.time <= 10) this.danger = true;
@@ -36,16 +36,18 @@ export default {
   data: () => ({
     selected_id: 0,
     chosen: false,
-    qs,
-    time: 180,
+    time: 30,
     danger: false,
     prog: null,
     score: 0,
   }),
   methods: {
+    ...mapMutations({
+      add: 'ADD_SCORE'
+    }),
     check(id) {
       this.chosen = true;
-      let inter = 0;
+      let inter = 1000;
       if (id != this.qs[this.selected_id].ans) inter = 3000;
       else this.score += this.qs[this.selected_id].score;
 
@@ -53,22 +55,18 @@ export default {
       setTimeout(() => {
         this.selected_id++;
         if (this.selected_id == this.qs.length) {
-          clearInterval(this.prog);
-          console.log("finish", this.score);
-          // this.$router.push('/');
+          
         }
       }, inter);
     },
-    shuffle(array) {
-      var currentIndex = array.length, temporaryValue, randomIndex;
-      while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-      }
-      return array;
+    finishGame() {
+      console.log("finish", this.score);
+      this.add(this.score);
+      // display score popup
+      alert(`You have scored ${this.score}.`);
+      setTimeout(() => {
+        this.$router.push('/');
+      }, 3000);
     }
   },
   watch: {
@@ -77,8 +75,7 @@ export default {
       if (this.time <= 0) {
         clearInterval(this.prog);
         setTimeout(() => {
-          console.log("game over", this.score)
-          // this.$router.push('/');
+          this.finishGame();
         }, 1000)
       };
     }
@@ -109,14 +106,13 @@ export default {
   }
   .quesBox {
     border: solid 1.5px #555;
-    padding: 2rem;
+    padding: 1rem 1.8rem;
     text-align: start;
     border-radius: .5rem;
     margin-bottom: 2.5rem;
     .ques{
       word-wrap: wrap;
-      font-size: 1.3rem;
-      padding: .5rem;
+      font-size: 1.2rem;
     }
   }
   .allAns {

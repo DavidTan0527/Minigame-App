@@ -21,6 +21,8 @@
         </vue-luckywheel-item>
       </vue-luckywheel>
     </div>
+    <pre class="scoreboard">Your score: {{ score }}</pre>
+    <span class="btn" @click="reset">Reset Score</span>
     <h1 class="result" v-if="showResult">
       Entering game mode {{records.gameType}}
     </h1>
@@ -28,50 +30,22 @@
 </template>
 
 <script>
-export default {
-  mounted() {
+import prizeList from './data/spinwheel-sectors.json';
+import { mapState, mapMutations } from 'vuex';
 
-  },
+export default {
   data: () => ({
     prizeIndex: 0,
-    prizeList: [
-      {
-        level: 1,
-        gameType: 0,
-        name: 'Level 1',
-      },
-      {
-        level: 2,
-        gameType: 1,
-        name: 'Level 2',
-      },
-      {
-        level: 3,
-        gameType: 0,
-        name: 'Level 1',
-      },
-      {
-        level: 4,
-        gameType: 2,
-        name: 'Level 3',
-      },
-      {
-        level: 5,
-        gameType: 1,
-        name: 'Level 2',
-      },
-      {
-        level: 6,
-        gameType: 2,
-        name: 'Level 3',
-      },
-    ],
+    prizeList,
     records: {},
     start: false,
     showResult: false,
     dark: true,
   }),
   methods: {
+    ...mapMutations({
+      reset: 'RESET_SCORE'
+    }),
     getPrize() {
       if (this.start) return;
       this.dark = false;
@@ -92,6 +66,11 @@ export default {
         this.$router.push(`/game/${this.records.gameType}`)
       }, 3500);
     }
+  },
+  computed: {
+    ...mapState([
+      'score'
+    ])
   }
 };
 </script>
@@ -141,6 +120,24 @@ export default {
   }
 }
 
+.scoreboard {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+}
+
+.btn {
+  $color: rgb(255, 60, 0);
+  cursor: pointer;
+  background-color: $color;
+  color: white;
+  padding: .3rem .8rem;
+  border-radius: .2rem;
+  &:hover, &:active {
+    background-color: darken($color, 2%);
+  }
+}
+
 .result {
   width: 100%;
   position: absolute;
@@ -149,6 +146,7 @@ export default {
   transform: translateX(-50%);
   color: rgba(#555, .5);
 }
+
 
 @keyframes pop {
   50% {

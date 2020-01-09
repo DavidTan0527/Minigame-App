@@ -1,0 +1,32 @@
+[
+  {
+    "level": 1,
+    "gameType": 0,
+    "name": "Game 1"
+  },
+  {
+    "level": 2,
+    "gameType": 1,
+    "name": "Game 2"
+  },
+  {
+    "level": 3,
+    "gameType": 0,
+    "name": "Game 1"
+  },
+  {
+    "level": 4,
+    "gameType": 1,
+    "name": "Game 2"
+  },
+  {
+    "level": 5,
+    "gameType": 0,
+    "name": "Game 1"
+  },
+  {
+    "level": 6,
+    "gameType": 1,
+    "name": "Game 2"
+  }
+]
