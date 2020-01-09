@@ -11,7 +11,8 @@
         :class="{
           'transparent': clickedD.includes(d.id),
           'selected': selectedD ? d.id == selectedD.id : '',
-          'is-wrong': wrong
+          'is-wrong': wrong,
+          'is-correct': right,
         }"
         v-for="d in DArr" :key="d.id" @click="() => {if(!freeze && !clickedD.includes(d.id)) selectedD = d}">
           {{ d.text }}
@@ -23,7 +24,8 @@
         :class="{
           'transparent': clickedC.includes(c.id),
           'selected': selectedC ? c.id == selectedC.id : '',
-          'is-wrong': wrong
+          'is-wrong': wrong,
+          'is-correct': right,
         }"
         v-for="c in CArr" :key="c.id" @click="() => {if(!freeze && !clickedC.includes(c.id)) selectedC = c}">
           {{ c.text }}
@@ -43,7 +45,7 @@ export default {
       this.time--;
       if (this.time <= 10) this.danger = true;
     }, 1000);
-    this.randomize(7);
+    this.randomize(5);
   },
   data: () => ({
     matches,
@@ -51,17 +53,18 @@ export default {
     qId: 0,
     prog: null,
     wrong: false,
+    right: false,
     freeze: false,
     selectedD: null,
     selectedC: null,
     clickedD: [],
     clickedC: [],
-    time: 45,
+    time: 60,
     CArr: [],
     DArr: [],
     QArr: [],
     danger: false,
-    endgame: false,
+    endgame: 3,
     correct: 0,
   }),
   methods: {
@@ -88,6 +91,7 @@ export default {
       this.selectedD = null;
       this.selectedC = null;
       this.wrong = false;
+      this.right = false;
       this.freeze = false;
     },
     shuffle(array) {
@@ -128,9 +132,8 @@ export default {
       this.match_num--; this.qId += this.qId == this.QArr.length - 1 ? 0 : 1;
     },
     finish_game() {
-      alert(`You have scored ${this.correct}.`);
-      clearInterval(this.prog);
       this.score(this.correct);
+      alert(`You have scored ${this.correct}.`);
       setTimeout(() => {
         this.$router.push('/');
       }, 3000);
@@ -143,6 +146,7 @@ export default {
           && this.selectedD.id == self.id) {
             this.clickedD.push(this.selectedD.id);
             this.clickedC.push(self.id);
+            this.right = true;
             this.inc();
             this.reset();
           } else { 
@@ -157,6 +161,7 @@ export default {
           && this.selectedC.id == self.id) {
             this.clickedD.push(self.id);
             this.clickedC.push(this.selectedC.id);
+            this.right = true;
             this.inc();
             this.reset();
           } else { 
@@ -167,11 +172,14 @@ export default {
     },
     match_num(x) {
       if (x == 0) {
-        if (this.endgame) setTimeout(this.finish_game, 500);
+        if (this.endgame == 0) {
+          clearInterval(this.prog);
+          setTimeout(this.finish_game, 500);
+        }
         else {
           setTimeout(() => {
-            this.time = 30;
-            this.endgame = true;
+            this.endgame--;
+            this.time = (this.endgame+3)*10;
             this.hard_reset();
             this.prog = setInterval(() => {
               this.time--;
@@ -183,7 +191,10 @@ export default {
       }
     },
     time(self) {
-      if (self <= 0) setTimeout(this.finish_game, 500);
+      if (self <= 0) {
+        clearInterval(this.prog);
+        setTimeout(this.finish_game, 500);
+      }
     }
   }
 }
@@ -215,7 +226,7 @@ export default {
       margin-left: .2rem;
     }
     .selects {
-      border: 1px solid;
+      border: 1.5px solid #999;
       padding: .15rem .25rem;
       border-radius: .25rem;
       margin-top: .2rem;
@@ -225,7 +236,11 @@ export default {
         opacity: 0;
       }
       &.selected {
-        border-color: greenyellow;
+        // border: 2px solid;
+        border-color: #333;
+        &.is-correct {
+          border-color: greenyellow;
+        }
         &.is-wrong {
           border-color: red !important;
         }

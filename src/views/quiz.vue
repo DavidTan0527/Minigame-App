@@ -15,10 +15,6 @@
         {{ ans.text }}
       </span>
     </div>
-    <!-- <div class="buttons">
-      <span @click="selected_id > 0 ? selected_id-- : selected_id = selected_id" class="last">Last</span>
-      <span @click="selected_id == qs.length - 1 ? selected_id = selected_id : selected_id++" class="next">Next</span>
-    </div> -->
   </div>
 </template>
 
@@ -36,7 +32,7 @@ export default {
   data: () => ({
     selected_id: 0,
     chosen: false,
-    time: 180,
+    time: 90,
     danger: false,
     prog: null,
     score: 0,
@@ -62,7 +58,7 @@ export default {
     finishGame() {
       this.add(this.score);
       // display score popup
-      alert(`You have scored ${this.score}.`);
+      alert(`You have scored ${parseInt(this.score)}.`);
       setTimeout(() => {
         this.$router.push('/');
       }, 3000);

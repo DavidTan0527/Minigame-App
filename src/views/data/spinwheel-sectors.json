@@ -2,31 +2,31 @@
   {
     "level": 1,
     "gameType": 0,
-    "name": "Game 1"
+    "name": "Quiz"
   },
   {
     "level": 2,
     "gameType": 1,
-    "name": "Game 2"
+    "name": "Matching"
   },
   {
     "level": 3,
     "gameType": 0,
-    "name": "Game 1"
+    "name": "Quiz"
   },
   {
     "level": 4,
     "gameType": 1,
-    "name": "Game 2"
+    "name": "Matching"
   },
   {
     "level": 5,
     "gameType": 0,
-    "name": "Game 1"
+    "name": "Quiz"
   },
   {
     "level": 6,
     "gameType": 1,
-    "name": "Game 2"
+    "name": "Matching"
   }
 ]

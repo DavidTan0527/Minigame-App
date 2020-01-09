@@ -29,7 +29,7 @@ export default {
     }, 1000);
   },
   data: () => ({
-    count: 5,
+    count: 3,
     load: null,
     qs
   }),

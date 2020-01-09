@@ -24,7 +24,8 @@
     <pre class="scoreboard">Your score: {{ score }}</pre>
     <span class="btn" @click="reset">Reset Score</span>
     <h1 class="result" v-if="showResult">
-      Entering game mode {{records.gameType}}
+      <!-- Entering game mode {{records.gameType}} -->
+      Entering Game
     </h1>
   </div>
 </template>
