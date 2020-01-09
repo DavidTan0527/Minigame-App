@@ -182,7 +182,7 @@ export default {
         else {
           setTimeout(() => {
             this.endgame--;
-            this.time = (this.endgame+3)*10;
+            this.time = 45+this.endgame*5;
             this.hard_reset();
             this.prog = setInterval(() => {
               this.time--;

@@ -1,5 +1,5 @@
 <template>
-  <div id="_game">
+  <div id="_game" :class="{'show': count >= 0}">
     <div class="loading" v-if="count >= 0">
       <h1>Game starts in...</h1>
       <pre class="lg-text">{{ count }}</pre>
@@ -56,6 +56,23 @@ export default {
 
 <style lang="scss">
 #_game {
+  &.show {
+    height: 100%; width: 100%;
+    background-image: url("../assets/background-trans.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  .loading {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
   .lg-text {
     margin: 0;
     font-size: 5rem;
