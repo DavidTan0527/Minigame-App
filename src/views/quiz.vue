@@ -124,50 +124,17 @@ export default {
       border-radius: .2rem;
       margin-bottom: 1rem;
       background-color: rgba(0,0,0, 0);
-      &:hover {
-        background-color: rgba(0,0,0, 0.2); 
-        transition-duration: 500ms;
-      }
+      transition-duration: 300ms;
       &:last-child {
         margin: 0;
       }
       &.correct {
         border-color: #8eff3e;
-        animation: pop;
       }
       &.wrong {
         border-color: rgb(255, 41, 41);
       }
     }
   }
-  .buttons {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: space-around;
-    span {
-      cursor: pointer;
-      font-size: 1.2rem;
-      border: 1px solid;
-      border-color: #8fc866;
-      color: #8fc866;
-      border-radius: .2rem;
-      outline: none;
-      background: none;
-      line-height: 1;
-      margin: 0.5em;
-      padding: 1em 2em;
-      transition: ease-out 300ms;
-      &:hover, &:focus {
-        border-color: var(--hover);
-        color: #fff;
-        &.last{ box-shadow: inset -6.5em 0 0 0 adjust-hue(#8fc866, 45deg); }
-        &.next{ box-shadow: inset 6.5em 0 0 0 adjust-hue(#8fc866, 45deg); }
-      }
-    }
-  }
-  @keyframes pop {
-    0% {}
-    100% {}
-  };
 }
 </style>
