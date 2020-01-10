@@ -16,12 +16,12 @@
       "type": "image/png"
     },
     {
-      "src": "/static/icon/apple-icon-144x144.png",
+      "src": "./img/icons/apple-icon-144x144.png",
       "size": "144x144",
       "type": "image/png"
     },
     {
-      "src": "/static/icon/favicon-96x96.png",
+      "src": "./img/icons/favicon-96x96.png",
       "size": "96x96",
       "type": "image/png"
     }
