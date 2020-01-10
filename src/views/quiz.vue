@@ -10,7 +10,7 @@
       </span>
     </div>
     <div class="allAns">
-      <span class="ans" v-for="ans in qs[selected_id].answers" :key="ans.id" @click="check(ans.id)"
+      <span class="ans" v-for="ans in shuffle(qs[selected_id].answers)" :key="ans.id" @click="check(ans.id)"
       :class="[chosen ? ans.id == qs[selected_id].ans ? 'correct' : 'wrong' : '']">
         {{ ans.text }}
       </span>
@@ -55,13 +55,24 @@ export default {
         }
       }, inter);
     },
+    shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    },
     finishGame() {
       this.add(this.score);
       // display score popup
       alert(`You have scored ${parseInt(this.score)}.`);
       setTimeout(() => {
         this.$router.push('/');
-      }, 3000);
+      }, 1000);
     }
   },
   watch: {

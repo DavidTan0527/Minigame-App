@@ -141,7 +141,7 @@ export default {
       alert(`You have scored ${this.correct}.`);
       setTimeout(() => {
         this.$router.push('/');
-      }, 3000);
+      }, 1000);
     }
   },
   watch: {
