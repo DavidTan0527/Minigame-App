@@ -10,7 +10,7 @@
       </span>
     </div>
     <div class="allAns">
-      <span class="ans" v-for="ans in shuffle(qs[selected_id].answers)" :key="ans.id" @click="check(ans.id)"
+      <span class="ans" v-for="ans in answers" :key="ans.id" @click="check(ans.id)"
       :class="[chosen ? ans.id == qs[selected_id].ans ? 'correct' : 'wrong' : '']">
         {{ ans.text }}
       </span>
@@ -24,6 +24,7 @@ import { mapMutations } from 'vuex';
 export default {
   props: ['qs'],
   mounted() {
+    this.answers = this.shuffle(this.qs[this.selected_id].answers);
     this.prog = setInterval(() => {
       this.time--;
       if (this.time <= 10) this.danger = true;
@@ -36,6 +37,7 @@ export default {
     danger: false,
     prog: null,
     score: 0,
+    answers: [],
   }),
   methods: {
     ...mapMutations({
@@ -50,8 +52,12 @@ export default {
       if (this.selected_id == this.qs.length-1) inter = 0;
       setTimeout(() => {
         this.selected_id++;
+        this.answers = this.shuffle(this.qs[this.selected_id].answers);
         if (this.selected_id == this.qs.length) {
-          
+          clearInterval(this.prog);
+          setTimeout(() => {
+            this.finishGame();
+          }, 500)
         }
       }, inter);
     },
@@ -84,6 +90,11 @@ export default {
           this.finishGame();
         }, 1000)
       };
+    }
+  },
+  computed: {
+    answers() {
+      // return shuffle()
     }
   }
 }
