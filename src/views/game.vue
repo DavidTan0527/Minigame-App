@@ -60,24 +60,26 @@ export default {
 #_game {
   &.show {
     height: 100%; width: 100%;
-    background-image: url("../assets/background-trans.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    // background-image: url("../assets/background-trans.png");
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    // background-position: center;
   }
   .loading {
-    position:absolute;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     font-size: 1.5rem;
     font-weight: 700;
-  }
-  .lg-text {
-    margin: 0;
-    font-size: 5rem;
+    color: darken(#80D7D9, 10%);
+    .lg-text {
+      margin: 0;
+      font-size: 5rem;
+      color: darken(#80D7D9, 10%);
+    }
   }
 }
 </style>

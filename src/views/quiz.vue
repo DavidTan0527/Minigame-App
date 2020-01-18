@@ -103,6 +103,7 @@ export default {
 <style lang="scss">
 .home {
   padding: 3rem;
+  color: #80D7D9;
   .header {
     display: flex;
     justify-content: space-between;
@@ -115,14 +116,14 @@ export default {
       display: flex;
       justify-content: flex-end;
       font-size: 3rem;
+      color: white;
       &.danger {
         color: red;
       }
     }
-
   }
   .quesBox {
-    border: solid 1.5px #555;
+    border: solid 1.5px #80D7D9;
     padding: 1rem 1.8rem;
     text-align: start;
     border-radius: .5rem;
@@ -130,6 +131,7 @@ export default {
     .ques{
       word-wrap: wrap;
       font-size: 1.2rem;
+      font-weight: 500;
     }
   }
   .allAns {
@@ -138,11 +140,14 @@ export default {
     flex-direction: column;
     .ans {
       cursor: pointer;
-      border: solid 1px #555;
+      border: solid 1px white;
       border-radius: .2rem;
       margin-bottom: 1rem;
       background-color: rgba(0,0,0, 0);
       transition-duration: 300ms;
+      font-weight: 500;
+      border-color: #80D7D9;
+      border-width: 2px;
       &:last-child {
         margin: 0;
       }

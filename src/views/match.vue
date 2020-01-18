@@ -207,6 +207,8 @@ export default {
 
 <style lang="scss">
 #_match {
+  padding: 2rem;
+  color: #80D7D9;
   .header {
     display: flex;
     justify-content: space-between;
@@ -219,6 +221,7 @@ export default {
       display: flex;
       justify-content: flex-end;
       font-size: 3rem;
+      color: white;
       &.danger {
         color: red;
       }
@@ -227,34 +230,37 @@ export default {
   .question {
     margin-bottom: 1rem;
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 700;
   }
   .answer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: 1.3rem;
     .debit {
+      width: 50%;
       margin-right: .2rem;
+      color: white;
     }
     .credit {
+      width: 50%;
       margin-left: .2rem;
+      color: white;
     }
     .selects {
-      border: 1.5px solid #999;
+      border: 1.5px solid #80D7D9;
       padding: .15rem .25rem;
       border-radius: .25rem;
       margin-top: .2rem;
       margin-bottom: .5rem;
       font-size: 1rem;
+      font-weight: 500;
+      color: #80D7D9;
       &.transparent {
         opacity: 0;
       }
       &.selected {
         // border: 2px solid;
-        border-color: #333;
-        &.is-correct {
-          border-color: greenyellow;
-        }
+        border-color: darken(#80D7D9, 50%);
         &.is-wrong {
           border-color: red !important;
         }
