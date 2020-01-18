@@ -21,10 +21,8 @@
         </vue-luckywheel-item>
       </vue-luckywheel>
     </div>
-    <pre class="scoreboard">Your score: {{ score }}</pre>
-    <span class="btn" @click="reset">Reset Score</span>
+    <div class="btn-text" @click="$router.push('/')">Back to start menu</div>
     <h1 class="result" v-if="showResult">
-      <!-- Entering game mode {{records.gameType}} -->
       Entering Game
     </h1>
   </div>
@@ -44,9 +42,6 @@ export default {
     dark: true,
   }),
   methods: {
-    ...mapMutations({
-      reset: 'RESET_SCORE'
-    }),
     getPrize() {
       if (this.start) return;
       this.dark = false;
@@ -68,86 +63,78 @@ export default {
       }, 3500);
     }
   },
-  computed: {
-    ...mapState([
-      'score'
-    ])
-  }
 };
 </script>
 
 <style lang="scss">
-.wheel-container {
-  transition-duration: 1s;
-  &.dark {
-    opacity: .5;
+#_spin {
+  .title {
+    color: #80D7D9;
   }
-  &:hover {
-    .spin-text { font-size: 1.9rem; }
+  .wheel-container {
+    transition-duration: 1s;
+    &.dark {
+      opacity: .5;
+    }
+    &:hover {
+      .spin-text { font-size: 1.9rem; }
+    }
+    .spin-text {
+      position: absolute;
+      font-size: 1.8rem;
+      font-weight: 500;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+      color: white;
+      animation: pop 0.8s ease-in-out infinite;
+    }
+    .custom-lucky-wheel-button {
+      position: relative;
+      top: 20px;
+      z-index: 99;
+    }
+    .wheel {
+      .vue-lucky-wheel-item-content {
+        font-size: 12px;
+        .name, .level {
+          position: absolute;
+          left: 0;
+          width: 100%;
+        }
+        .name {
+          top: 30px;
+        }
+        .level {
+          bottom: 60px;
+        }
+      }
+      .vue-lucky-wheel-button {
+        display: none;
+      }
+    }
   }
-  .spin-text {
+
+  .btn-text {
+    color: #999;
+    font-weight: 700;
+    font-size: 1rem;
+    position: relative;
+    top: 5rem;
+    cursor: pointer;
+  }
+
+  .result {
+    width: 100%;
     position: absolute;
-    font-size: 1.8rem;
     top: 50%;
     left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-    animation: pop 0.8s ease-in-out infinite;
-  }
-  .custom-lucky-wheel-button {
-    position: relative;
-    top: 20px;
-    z-index: 99;
-  }
-  .wheel {
-    .vue-lucky-wheel-item-content {
-      font-size: 12px;
-      .name, .level {
-        position: absolute;
-        left: 0;
-        width: 100%;
-      }
-      .name {
-        top: 30px;
-      }
-      .level {
-        bottom: 60px;
-      }
-    }
-    .vue-lucky-wheel-button {
-      display: none;
-    }
+    transform: translateX(-50%);
+    color: rgba(#555, .5);
   }
 }
-
-.scoreboard {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  font-size: 1.5rem;
-}
-
-.btn {
-  $color: rgb(255, 60, 0);
-  cursor: pointer;
-  background-color: $color;
-  color: white;
-  padding: .3rem .8rem;
-  border-radius: .2rem;
-  &:hover, &:active {
-    background-color: darken($color, 2%);
-  }
-}
-
-.result {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(#555, .5);
-}
-
 
 @keyframes pop {
   50% {

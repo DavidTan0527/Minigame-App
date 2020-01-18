@@ -11,6 +11,13 @@ import VueLuckywheel from 'vue-luckywheel'
 import 'vue-luckywheel/lib/vue-luckywheel.css'
 Vue.use(VueLuckywheel)
 
+// for vue-games
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue)
+import 'vue-games';
+
 Vue.config.productionTip = false
 
 new Vue({

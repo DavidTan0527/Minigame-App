@@ -7,20 +7,22 @@
     <game-one class="game" v-else-if="$route.params.type == 0"
     :qs="qs"></game-one>
     <game-two class="game" v-else-if="$route.params.type == 1"></game-two>
-    <div class="game" v-else-if="$route.params.type == 2"></div>
+    <game-three class="game" v-else-if="$route.params.type == 2"></game-three>
   </div>
 </template>
 
 <script>
 import gameOne from './quiz';
 import gameTwo from './match';
+import gameThree from './hangman';
 
 import qs from './data/questions.json';
 
 export default {
   components: {
     gameOne,
-    gameTwo
+    gameTwo,
+    gameThree,
   },
   mounted() {
     this.qs = this.shuffle(this.qs);

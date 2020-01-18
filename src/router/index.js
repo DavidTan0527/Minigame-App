@@ -6,6 +6,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    name: 'start',
+    component: () => import('@/views/start')
+  },
+  {
+    path: '/spin',
     name: 'spin',
     component: () => import('@/views/spin')
   },
@@ -14,6 +19,21 @@ const routes = [
     name: 'game',
     component: () => import('@/views/game')
   },
+  {
+    path: '/notes',
+    name: 'notes',
+    component: () => import('@/views/notes')
+  },
+  // {
+  //   path: '/hangman',
+  //   name: 'hangman',
+  //   component: () => import('@/views/hangman')
+  // },
+  // {
+  //   path: '/crossword',
+  //   name: 'crossword',
+  //   component: () => import('@/views/crossword')
+  // }
 ]
 
 const router = new VueRouter({
