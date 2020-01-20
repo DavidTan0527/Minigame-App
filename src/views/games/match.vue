@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import matches from './data/match.json';
 import { mapMutations } from 'vuex';
 
 export default {
+  props: ['matches'],
   mounted() {
     this.prog = setInterval(() => {
       this.time--;
@@ -51,7 +51,6 @@ export default {
     this.randomize(5);
   },
   data: () => ({
-    matches,
     match_num: 0,
     qId: 0,
     prog: null,

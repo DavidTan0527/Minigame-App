@@ -4,26 +4,34 @@
       <h1>Game starts in...</h1>
       <pre class="lg-text">{{ count }}</pre>
     </div>
-    <game-one class="game" v-else-if="$route.params.type == 0"
-    :qs="qs"></game-one>
-    <game-two class="game" v-else-if="$route.params.type == 1"></game-two>
-    <game-three class="game" v-else-if="$route.params.type == 2"></game-three>
-    <div class="game" v-else-if="$route.params.type == 3"></div>
+    <game-one class="game" 
+    v-else-if="$route.params.type == 0" :qs="qs"></game-one>
+    <game-two class="game" 
+    v-else-if="$route.params.type == 1" :matches="mq"></game-two>
+    <game-three class="game" 
+    v-else-if="$route.params.type == 2" :questions="hq"></game-three>
+    <game-four class="game" 
+    v-else-if="$route.params.type == 3" :words="cq"></game-four>
   </div>
 </template>
 
 <script>
-import gameOne from './quiz';
-import gameTwo from './match';
-import gameThree from './hangman';
+import gameOne from './games/quiz';
+import gameTwo from './games/match';
+import gameThree from './games/hangman';
+import gameFour from './games/crossword';
 
 import qs from './data/questions.json';
+import mq from './data/match.json';
+import hq from './data/hangman.json';
+import cq from './data/crosswords.json';
 
 export default {
   components: {
     gameOne,
     gameTwo,
     gameThree,
+    gameFour,
   },
   mounted() {
     this.qs = this.shuffle(this.qs);
@@ -34,7 +42,7 @@ export default {
   data: () => ({
     count: 3,
     load: null,
-    qs
+    qs, mq, hq, cq,
   }),
   methods: {
     shuffle(array) {

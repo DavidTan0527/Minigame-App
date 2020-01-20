@@ -13,9 +13,8 @@
 <script>
 import hangmanGame from '@/components/HangmanGame';
 
-import questions from './data/hangman.json';
-
 export default {
+  props: ['questions'],
   mounted() {
     this.arr = this.shuffle(this.questions);
   },
@@ -25,7 +24,6 @@ export default {
   data: () => ({
     qId: 0,
     arr: [],
-    questions,
   }),
   methods: {
     shuffle(array) {

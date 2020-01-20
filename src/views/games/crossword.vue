@@ -8,16 +8,15 @@
 </template>
 
 <script>
-import words from './data/crosswords.json';
-
 import crossword from '@/components/CrosswordGame';
 
 export default {
+  props: ['words'],
   components: {
     crossword,
   },
   data: () => ({
-    words    
+      
   })
 }
 </script>
