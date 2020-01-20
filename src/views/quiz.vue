@@ -102,7 +102,7 @@ export default {
 
 <style lang="scss">
 .home {
-  padding: 3rem;
+  padding: 2.5rem;
   color: #80D7D9;
   .header {
     display: flex;
@@ -148,6 +148,7 @@ export default {
       font-weight: 500;
       border-color: #80D7D9;
       border-width: 2px;
+      padding: .2rem .5rem;
       &:last-child {
         margin: 0;
       }
