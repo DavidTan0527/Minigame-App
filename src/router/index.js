@@ -24,16 +24,11 @@ const routes = [
     name: 'notes',
     component: () => import('@/views/notes')
   },
-  // {
-  //   path: '/hangman',
-  //   name: 'hangman',
-  //   component: () => import('@/views/hangman')
-  // },
-  // {
-  //   path: '/crossword',
-  //   name: 'crossword',
-  //   component: () => import('@/views/crossword')
-  // }
+  {
+    path: '/crossword',
+    name: 'crossword',
+    component: () => import('@/views/crossword')
+  }
 ]
 
 const router = new VueRouter({

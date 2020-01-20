@@ -16,8 +16,8 @@
   },
   {
     "level": 4,
-    "gameType": 1,
-    "name": "Matching"
+    "gameType": 2,
+    "name": "Hangman"
   },
   {
     "level": 5,

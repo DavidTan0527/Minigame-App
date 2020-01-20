@@ -18,7 +18,7 @@
         <span class="btn" @click="$refs.modal.active = true">Start</span>
       </div>
       <div>
-        <span class="btn">Notes</span>
+        <span class="btn" @click="$router.push('/notes')">Notes</span>
       </div>
     </div>
 
@@ -214,7 +214,7 @@ export default {
     }
 
     .btn {
-      $color: rgb(255, 60, 0);
+      $color: rgb(255, 51, 0);
       cursor: pointer;
       background-color: $color;
       color: white;

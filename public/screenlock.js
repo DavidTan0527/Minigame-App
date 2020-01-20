@@ -15,14 +15,14 @@ function checkOrientationChange()
       break;
     case 270: goFullScreen();
       break;
-    default: console.log('implementation of screen orientation');
+    default: goFullScreen();
   }
 }
 
 // function to request full screen of device browser
 
 function goFullScreen () {
-var elem = document.getElementById("myContent");
+var elem = document.getElementById("app");
   if (elem.requestFullscreen) {
     elem.requestFullscreen().then(data=> {
     lockScreenOrientation();

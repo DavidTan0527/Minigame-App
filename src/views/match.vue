@@ -259,7 +259,7 @@ export default {
         opacity: 0;
       }
       &.selected {
-        // border: 2px solid;
+        border: 2px solid;
         border-color: darken(#80D7D9, 50%);
         &.is-wrong {
           border-color: red !important;

@@ -8,6 +8,7 @@
     :qs="qs"></game-one>
     <game-two class="game" v-else-if="$route.params.type == 1"></game-two>
     <game-three class="game" v-else-if="$route.params.type == 2"></game-three>
+    <div class="game" v-else-if="$route.params.type == 3"></div>
   </div>
 </template>
 

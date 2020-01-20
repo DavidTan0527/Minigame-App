@@ -1,25 +1,28 @@
 <template>
   <div id="_spin">
     <h1 class="title">SPIN ME!!!</h1>
-    <div class="wheel-container" :class="{dark}" @click="getPrize">
-      <div class="custom-lucky-wheel-button">
+    <div class="wheel-container"  @click="getPrize">
+      <div class="custom-lucky-wheel-button" :class="{dark}">
         <img 
           src="https://upload.wikimedia.org/wikipedia/commons/0/05/Red_Arrow_Left.png" 
           alt="" style="transform: rotate(-90deg);" width="60" height="40">
       </div>
-      <vue-luckywheel
-        class="wheel"
-        ref="luckyWheel"
-        :prizeIndex="prizeIndex"
-        :rotate-time="5"
-        @game-over="gameOver">
+      <div class="luckywheel">
         <div class="spin-text" v-if="!start">
           Click here to spin
         </div>
-        <vue-luckywheel-item v-for="(prize, index) in prizeList" :key="index">
-          <div class="name">{{prize.name}}</div>
-        </vue-luckywheel-item>
-      </vue-luckywheel>
+        <vue-luckywheel
+          class="wheel"
+          :class="{dark}"
+          ref="luckyWheel"
+          :prizeIndex="prizeIndex"
+          :rotate-time="5"
+          @game-over="gameOver">
+          <vue-luckywheel-item v-for="(prize, index) in prizeList" :key="index">
+            <div class="name">{{prize.name}}</div>
+          </vue-luckywheel-item>
+        </vue-luckywheel>
+      </div>
     </div>
     <div class="btn-text" @click="$router.push('/')">Back to start menu</div>
     <h1 class="result" v-if="showResult">
@@ -73,16 +76,13 @@ export default {
   }
   .wheel-container {
     transition-duration: 1s;
-    &.dark {
-      opacity: .5;
-    }
     &:hover {
-      .spin-text { font-size: 1.9rem; }
+      .spin-text { font-size: 2.2rem; }
     }
     .spin-text {
       position: absolute;
-      font-size: 1.8rem;
-      font-weight: 500;
+      font-size: 2rem;
+      font-weight: 700;
       top: 50%;
       left: 50%;
       width: 100%;
@@ -95,24 +95,38 @@ export default {
       position: relative;
       top: 20px;
       z-index: 99;
-    }
-    .wheel {
-      .vue-lucky-wheel-item-content {
-        font-size: 12px;
-        .name, .level {
-          position: absolute;
-          left: 0;
-          width: 100%;
-        }
-        .name {
-          top: 30px;
-        }
-        .level {
-          bottom: 60px;
-        }
+      transition-duration: 500ms;
+      &.dark {
+        filter: blur(1px) saturate(.9) opacity(.8);
       }
-      .vue-lucky-wheel-button {
-        display: none;
+    }
+    .luckywheel {
+      position: relative;
+      .wheel {
+        transition-duration: 500ms;
+        &.dark {
+          filter: blur(1px) saturate(.9) opacity(.8);
+        }
+        .vue-lucky-wheel-item-content {
+          font-size: 12px;
+          .name, .level {
+            position: absolute;
+            left: 0;
+            width: 100%;
+          }
+          .name {
+            top: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: black;
+          }
+          .level {
+            bottom: 60px;
+          }
+        }
+        .vue-lucky-wheel-button {
+          display: none;
+        }
       }
     }
   }

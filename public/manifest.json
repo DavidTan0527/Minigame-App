@@ -3,7 +3,15 @@
   "short_name": "ACT",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
+  "background_color": "#101747",
+  "theme_color": "#80D7D9",
+  "orientation": "portrait-primary",
+  "serviceworker": {
+    "src": "/service-worker.js",
+    "scope": "/",
+    "type": "",
+    "update_via_cache": "imports"
+  },
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
