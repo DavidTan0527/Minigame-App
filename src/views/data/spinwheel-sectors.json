@@ -1,8 +1,8 @@
 [
   {
     "level": 1,
-    "gameType": 0,
-    "name": "Quiz"
+    "gameType": 3,
+    "name": "Crossword"
   },
   {
     "level": 2,

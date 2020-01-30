@@ -27,6 +27,7 @@
         <div class="modal-button" @click="goto('/game/0')">Quiz</div>
         <div class="modal-button" @click="goto('/game/1')">Matching</div>
         <div class="modal-button" @click="goto('/game/2')">Hangman</div>
+        <div class="modal-button" @click="goto('/game/3')">Crossword</div>
         <div class="modal-button" @click="goto('/spin')">Random</div>
       </template>
       <template slot="footer">

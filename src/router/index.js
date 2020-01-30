@@ -24,11 +24,6 @@ const routes = [
     name: 'notes',
     component: () => import('@/views/notes')
   },
-  {
-    path: '/crossword',
-    name: 'crossword',
-    component: () => import('@/views/crossword')
-  }
 ]
 
 const router = new VueRouter({
